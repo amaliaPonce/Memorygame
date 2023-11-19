@@ -1,0 +1,125 @@
+body {
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #1a581d; 
+  color: #fff;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.App-header {
+  text-align: center;
+}
+
+.title__game {
+  font-size: 46px;
+}
+
+.memory-game {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.card {
+  width: 100%;
+  height: 120px;
+  background-color: #5b8c23; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 28px;
+  color: #333;
+  font-weight: bold;
+  border: 2px solid #5b5d15; 
+  border-radius: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  position: relative;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+  background-color: #CDDC39; 
+  color: #fff;
+}
+
+.emoji {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.game-complete {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 24px;
+  background-color: #8BC34A; 
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  transition: transform 0.3s ease;
+  border: 1px solid #4CAF50; 
+  color: #ffffff;
+  font-weight: bold;
+  animation: appear 0.5s ease-in-out;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media (max-width: 600px) {
+  .memory-game {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(22vw, 1fr));
+    gap: 11px;
+    margin: 0 auto;
+    max-width: 90%;
+    justify-content: center; 
+  }
+
+  .card {
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .memory-game {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(23vw, 1fr));
+    gap: 11px;
+    margin: 0 auto;
+    max-width: 90%;
+    justify-content: center; 
+  }
+
+  .card {
+    width: 100%; 
+    height: 20vw;
+  }
+}
+
